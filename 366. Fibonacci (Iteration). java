@@ -1,0 +1,22 @@
+/* this is slower than the recursive solution */
+
+class Solution {
+    /**
+     * @param n: an integer
+     * @return an integer f(n)
+     */
+    public int fibonacci(int n) {
+        // write your code here
+        int a = 0;
+        int b = 1;
+
+        for (int i = 0; i < n - 1; i++) {
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+        return a; // 比如n = 5，进行0 - 3共四次循环，结束前a = b，即为最后一个数，
+                  // b和c都是最后一个的下个数，不对
+    }
+}
+
